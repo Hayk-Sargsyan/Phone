@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="head">
+            <input class="dial-area form-control text-center" ng-model="display" type="text" />
+
+            <div class="input-group" ng-show="searchContacts[0]">
+                <div class="form-control" aria-describedby="list" ng-click="setContact(searchContacts[0]);"> {{ searchContacts[0].name }}</div>
+                <span class="input-group-addon" id="list" ng-click="results();"><i class="fa fa-sort-desc"></i></span>
+            </div>
+
+        </div>
+
+        <table class="table table-responsive text-center">
+                <tr ng-repeat="row in buttons">
+                    <td ng-repeat="button in row">
+                        <mybutton ng-click="dial(button);" number="button.number" letters="button.letters"></mybutton>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button class="btn btn-default my-btn" ng-click="dialing(display);"><i class="fa fa-phone"></i></div></button>
+                    <td></td>
+                    <td><button class="btn btn-default my-btn" ng-click="delete(display);"><i class="fa fa-reply"></i></div></button>
+                </tr>
+
+        </table>
+    </div>
+</div>
+
+<script type="text/ng-template" id="contactsPopUp.html">
+    <div class="modal-header">
+        <h3 class="modal-title">search results</h3>
+    </div>
+    <div class="modal-body">
+
+        <contacts></contacts>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" ng-click="cancel();">Cancel</button>
+    </div>
+</script>
+

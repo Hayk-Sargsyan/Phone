@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="phone">
+<head>
+    <title>Phone</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/angular-xeditable/dist/css/xeditable.css">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
+
+    <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+</head>
+
+<body>
+
+<div class="container" ng-module="NavCtrl">
+        <div class="row" >
+            <div class="col-md-12">
+                <ul class="nav nav-tabs" id="myNav">
+                    <li role="presentation" class=" tab-pane active"><a data-toggle="tab" href="#dial"><i class="fa fa-th-large"></i></a></li>
+                    <li role="presentation" class="tab-pane"><a data-toggle="tab" href="#contacts"><i class="fa fa-user"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <ng-view></ng-view>
+    </div>
+
+
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-xeditable/dist/js/xeditable.js"></script>
+
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/vendor/tab.js"></script>
+
+
+    <script src="scripts/directives/contact.js"></script>
+    <script src="scripts/directives/mybutton.js"></script>
+
+    <script src="scripts/services/buttons.js"></script>
+    <script src="scripts/services/contacts.js"></script>
+
+    <script src="scripts/controllers/dial.controller.js"></script>
+    <script src="scripts/controllers/contacts.controller.js"></script>
+    <script src="scripts/controllers/contacts.modal.controller.js"></script>
+    <script src="scripts/controllers/popup.controller.js"></script>
+    <script src="scripts/controllers/nav.controller.js"></script>
+</body>
+</html>

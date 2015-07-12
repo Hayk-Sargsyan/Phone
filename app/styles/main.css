@@ -1,0 +1,17 @@
+.my-btn {
+    min-width: 60px;
+    margin: 1px;
+}
+
+.dial-area {
+    margin: 5px 0;
+    padding: 20px;
+}
+
+.search-list {
+    width: 100%;
+}
+
+.head {
+    height: 100px;
+}
