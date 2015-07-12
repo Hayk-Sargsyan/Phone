@@ -2,7 +2,11 @@ angular.module('phone')
 .controller('ContactsCtrl', function($scope, MyContacts, $modal) {
         $scope.searchText = '';
 
-        $scope.contacts = MyContacts;
+        $scope.contacts = MyContacts.contacts;
+
+        $scope.isCollapsed = true;
+
+        $scope.newContact = { };
 
         var i;
 
@@ -32,4 +36,23 @@ angular.module('phone')
             });
 
         };
+
+        $scope.collaapse = function() {
+            if($scope.isCollapsed == false) {
+                $scope.isCollapsed = true;
+            } else {
+                $scope.isCollapsed = false;
+            }
+        };
+
+        $scope.cancelAdd = function() {
+            $scope.newContact = {};
+            $scope.isCollapsed = true;
+        };
+
+        $scope.addContact = function() {
+            MyContacts.add($scope.newContact);
+            $scope.newContact = {};
+            $scope.isCollapsed = true;
+        }
     });

@@ -23,6 +23,23 @@ angular.module('phone')
             }
         ];
 
+        var addContact = function(contact) {
+            contacts.push(contact);
+        };
 
-        return contacts;
+        var delContact = function(contact) {
+            for(var i = 0; i < contacts.length; i++) {
+                if(contact.name == contacts[i].name && contact.number == contacts[i].number) {
+                    contacts.splice(i,1);
+                    break;
+                }
+            }
+        };
+
+
+        return  {
+            contacts : contacts,
+            add      : addContact,
+            del      : delContact
+        };
     });

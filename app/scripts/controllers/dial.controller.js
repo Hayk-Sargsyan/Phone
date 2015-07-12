@@ -3,7 +3,7 @@ angular.module('phone')
     .controller('DialCtrl', function($scope, $modal, MobileButtons, MyContacts) {
         $scope.display = '';
 
-        var contacts = MyContacts;
+        var contacts = MyContacts.contacts;
 
         $scope.buttons = MobileButtons.buttons;
 

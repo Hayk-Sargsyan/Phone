@@ -1,5 +1,5 @@
 angular.module('phone')
-    .controller('ContactsModalCtrl', function($scope, $modalInstance, contact) {
+    .controller('ContactsModalCtrl', function($scope, $modalInstance, contact, MyContacts) {
 
         $scope.contact = contact;
 
@@ -11,8 +11,13 @@ angular.module('phone')
             $modalInstance.close(contact);
         };
 
+        $scope.delete = function (contact) {
+            MyContacts.del(contact);
+
+            $modalInstance.dismiss('cancel');
+        };
+
         $scope.cancel = function () {
             $modalInstance.close($scope.old);
-            $modalInstance.dismiss('cancel');
         };
     });

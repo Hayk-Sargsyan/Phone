@@ -6,8 +6,8 @@ All you need to do is to clone this repository,
 
 
 ```
-https://github.com/Hayk-Sargsyan/phone-task
-cd phone-task
+https://github.com/Hayk-Sargsyan/Phone
+cd Phone
 ```
 
 Then, install the dependencies:

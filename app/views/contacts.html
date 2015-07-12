@@ -1,9 +1,23 @@
 <div class="row">
     <div class="col-md-12">
 
-        <div class="input-group">
+        <div class="input-group searsh-area">
             <input class="form-control" aria-describedby="addCont"  type="text" placeholder="Search..." ng-model="searchText"></label>
-            <span class="input-group-addon" id="addCont" ng-click="addContact();" ><i class="fa fa-user-plus"></i></span>
+            <span class="input-group-addon" id="addCont" ng-click="collaapse();" ><i class="fa fa-user-plus"></i></span>
+        </div>
+        <div collapse="isCollapsed">
+            <div class="well well-lg">
+                <div >
+                    Name: <a href="#" editable-text="newContact.name">{{ newContact.name || 'empty' }}</a>
+                </div>
+                <div>
+                    Number: <a href="#" editable-text="newContact.number">{{ newContact.number || 'empty' }}</a>
+                </div>
+
+                <hr/>
+                <button class="btn btn-success" ng-click="addContact();" >Save</button>
+                <button class="btn btn-warning" ng-click="cancelAdd();">Cancel</button>
+            </div>
         </div>
 
         <contacts></contacts>
@@ -22,7 +36,8 @@
 
     </div>
     <div class="modal-footer">
-        <button class="btn btn-success" ng-click="save();">Save</button>
+        <button class="btn btn-success" ng-click="save(contact);">Save</button>
+        <button class="btn btn-danger"  ng-click="delete(contact);">Delete</button>
         <button class="btn btn-warning" ng-click="cancel();">Cancel</button>
     </div>
 </script>
